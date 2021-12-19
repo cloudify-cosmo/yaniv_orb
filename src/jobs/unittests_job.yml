@@ -1,0 +1,10 @@
+description: >
+  Run unittests
+# What will this job do?
+# Descriptions should be short, simple, and clear.
+
+executor: py36
+
+steps:
+  - checkout
+  - unittests

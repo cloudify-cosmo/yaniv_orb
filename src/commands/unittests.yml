@@ -1,0 +1,31 @@
+description: >
+  This command runs the unit tests for a plugin
+# What will this command do?
+# Descriptions should be short, simple, and clear.
+steps:
+  - run:
+      name: Set Python
+      command: |
+        if ! command -v COMMAND &> /dev/null
+        then
+            echo "COMMAND could not be found"
+            exit
+        else
+            pyenv global 3.6.5
+        fi
+  - run:
+      name: upgrade pip
+      command: pip install --upgrade pip
+  - run:
+      name: upgrade setuptools
+      command: pip install --upgrade setuptools
+  - run:
+      name: Install tox
+      command: pip install tox
+  - run:
+      name: Runt flake8 test
+      command: tox -e pep8
+  - run:
+      name: Run py36 test
+      command: tox -e py36
+

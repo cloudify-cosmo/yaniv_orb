@@ -1,0 +1,4 @@
+description: >
+  This is a פטאיםמ 3.6 executor using Docker and Node.
+docker:
+      - image: circleci/python:3.6
