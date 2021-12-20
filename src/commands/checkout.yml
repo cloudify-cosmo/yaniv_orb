@@ -2,12 +2,10 @@ description: >
   This command checksout the git repository
 # What will this command do?
 # Descriptions should be short, simple, and clear.
-steps:
-  - run:
-      name: "git checkout"
-      command: |
-        if [ -n "$CI_PULL_REQUEST" ]; then
-          PR_ID=${CI_PULL_REQUEST##*/}
-          git fetch origin +refs/pull/$PR_ID/merge:
-          git checkout -qf FETCH_HEAD
-        fi
+post:
+    - >
+      if [ -n "$CI_PULL_REQUEST" ]; then
+        PR_ID=${CI_PULL_REQUEST##*/}
+        git fetch origin +refs/pull/$PR_ID/merge:
+        git checkout -qf FETCH_HEAD
+      fi
