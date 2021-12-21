@@ -28,4 +28,3 @@ steps:
   - run:
       name: Run py36 test
       command: tox -e py36
-
