@@ -1,7 +1,5 @@
 description: >
   This command runs the unit tests for a plugin
-# What will this command do?
-# Descriptions should be short, simple, and clear.
 steps:
   - run:
       name: Set Python
