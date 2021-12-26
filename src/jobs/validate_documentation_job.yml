@@ -1,0 +1,12 @@
+description: >
+  Run validate_documentation
+# What will this job do?
+# Descriptions should be short, simple, and clear.
+
+executor: py36
+
+steps:
+  - gh/install
+  - gh/setup
+  - gh/clone
+  - validate_documentation
