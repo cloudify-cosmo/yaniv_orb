@@ -22,4 +22,3 @@ steps:
           cat futurize_diffs
           exit 1
         fi
-
