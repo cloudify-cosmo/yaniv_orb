@@ -24,7 +24,7 @@ steps:
       command: pip install tox
   - run:
       name: Run flake8 test
-      command: /home/circleci/.local/bin/tox -e linting
+      command: /home/circleci/.local/bin/tox -e flake8
   - run:
       name: Run py36 test
       command: /home/circleci/.local/bin/tox -e nosetest
