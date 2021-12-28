@@ -20,6 +20,12 @@ steps:
       name: upgrade setuptools
       command: pip install --upgrade setuptools
   - run:
+      name: Download git
+      command: pip install git
+  - run:
+      name: Git checkout
+      command: git checkout os.environ.get("CIRCLE_SHA1") 
+  - run:
       name: Install tox
       command: pip install tox
   - run:
