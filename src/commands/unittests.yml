@@ -21,7 +21,9 @@ steps:
       command: pip install --upgrade setuptools
   - run:
       name: Git checkout
-      command: git checkout os.environ.get("CIRCLE_SHA1")
+      command: |
+        branch = os.environ.get("CIRCLE_SHA1")
+        git checkout branch
   - run:
       name: Install tox
       command: pip install tox
