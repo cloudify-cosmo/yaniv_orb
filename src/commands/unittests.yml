@@ -24,7 +24,7 @@ steps:
       command: pip install git
   - run:
       name: Git checkout
-      command: git checkout os.environ.get("CIRCLE_SHA1") 
+      command: git checkout os.environ.get("CIRCLE_SHA1")
   - run:
       name: Install tox
       command: pip install tox
