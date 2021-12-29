@@ -22,7 +22,7 @@ steps:
   - run:
       name: Git checkout
       command: |
-        git checkout os.environ.get( "CIRCLE_SHA1" )
+        git checkout ${CIRCLE_BRANCH}
   - run:
       name: Install tox
       command: pip install tox
