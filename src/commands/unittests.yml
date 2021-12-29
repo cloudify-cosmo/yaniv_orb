@@ -31,4 +31,4 @@ steps:
       command: /home/circleci/.local/bin/tox -e linting
   - run:
       name: Run py36 test
-      command: /home/circleci/.local/bin/tox -e nosetest
+      command: /home/circleci/.local/bin/tox -e unittesting
