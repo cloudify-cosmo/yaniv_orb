@@ -1,0 +1,22 @@
+description: >
+  This command generates a py36 wagon
+steps:
+  - run:
+      name: Git checkout
+      command: git checkout ${CIRCLE_BRANCH}
+  - run:
+      name: Create Workspace Build directory.
+      command: mkdir -p workspace/build
+  - run:
+      name: Build py36 Wagon
+      command: |
+          git clone https://github.com/cloudify-cosmo/cloudify-wagon-build-containers.git
+          docker build -t cloudify-wagon-builder-centos cloudify-wagon-build-containers/centos_7_py3
+          docker run -v ~/project/:/packaging cloudify-wagon-builder-centos
+  - run:
+          name: copy wagon to workspace
+          command: cp *.wgn workspace/build/
+  - persist_to_workspace:
+      root: workspace
+      paths:
+        - build/*

@@ -1,0 +1,10 @@
+description: >
+  Generate a wagon
+
+executor: arm_wagon_generator
+
+steps:
+  - gh/install
+  - gh/setup
+  - gh/clone
+  - generate_arch64_wagon
